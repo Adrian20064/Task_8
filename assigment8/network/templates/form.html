@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DHCP Assignment</title>
+  </head>
+  <body>
+    <h2>Request IP Address</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="Submit" />
+    </form>
+    {% if result %}
+    <h3>Result:</h3>
+    <p>MAC Address: {{ result.mac }}</p>
+    <p>Assigned IP: {{ result.ip }}</p>
+    <p>DHCP Version: {{ result.version }}</p>
+    <p>Lease Time: {{ result.lease_time }}</p>
+    {% endif %}
+  </body>
+</html>
