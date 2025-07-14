@@ -48,7 +48,7 @@ def network_view(request):
                     leases[mac] = ip
 
                 # Guardar en MongoDB
-                client = MongoClient('mongodb://<IP-MONGODB>:27017/')
+                client = MongoClient('mongodb://13.220.30.99:27017/')
                 db = client.network
                 db.leases.insert_one({
                     'mac_address': mac,
