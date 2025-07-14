@@ -70,7 +70,7 @@ def network_view(request):
     return render(request, 'form.html', {'form': form, 'result': result})
 
 def lease_list_view(request):
-    client = MongoClient('mongodb://<ip publica de mongo>:27017/') #ip de la base de datos
+    client = MongoClient('mongodb://13.220.30.99:27017/') #ip de la base de datos
     db = client.network
     leases = list(db.leases.find())
     return render(request, 'leases.html', {'leases': leases})
